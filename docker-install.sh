@@ -23,5 +23,9 @@ echo \
 sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 
-# Verify installation
-sudo docker run hello-world
+sudo groupadd docker
+sudo usermod -aG docker $USER
+newgrp docker
+
+# Verify that Docker Engine is installed correctly by running the hello-world image
+docker run hello-world
